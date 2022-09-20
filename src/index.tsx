@@ -2,14 +2,27 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
-import MainPage from "./features/MainPage";
+import MainPage from "./pages/MainPage";
+import News from "./pages/news/News";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Agenda from "./pages/agenda/Agenda";
+import Services from "./pages/service/Services";
+import Contact from "./pages/contact/Contact";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <MainPage />
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<MainPage />} />
+        <Route path="/news" element={<News />} />
+        <Route path="/agenda" element={<Agenda />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>
 );
 

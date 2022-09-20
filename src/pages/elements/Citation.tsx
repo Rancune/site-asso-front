@@ -1,11 +1,10 @@
-import { Slide } from "@mui/material";
-import Typography from "@mui/material/Typography";
+import { Slide, Typography } from "@mui/material";
 import { Stack, Box } from "@mui/system";
 import React from "react";
 
 const Citation = () => {
   return (
-    <Slide direction="right" in mountOnEnter >
+    <Slide direction="right" in mountOnEnter>
       <Stack
         direction="column"
         width="80%"
