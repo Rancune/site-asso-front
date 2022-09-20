@@ -1,13 +1,13 @@
 import React from "react";
 import Navbar from "../../components/navbar/Navbar";
 
-const Agenda = () => {
+const Service = () => {
   return (
     <>
       <Navbar />
-      <div>Agenda</div>
+      <div>Services</div>
     </>
   );
 };
 
-export default Agenda;
+export default Service;

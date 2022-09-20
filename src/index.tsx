@@ -6,7 +6,7 @@ import MainPage from "./pages/MainPage";
 import News from "./pages/news/News";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Agenda from "./pages/agenda/Agenda";
-import Services from "./pages/service/Services";
+import Services from "./pages/pageService/Services";
 import Contact from "./pages/contact/Contact";
 
 const root = ReactDOM.createRoot(

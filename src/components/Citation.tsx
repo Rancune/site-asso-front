@@ -9,14 +9,14 @@ const Citation = () => {
         direction="column"
         width="80%"
         height={100}
-        bgcolor="orange"
+        bgcolor="#EFC049"
         justifyContent="flex-end"
         alignItems="flex-end"
         spacing={1}
         padding={3}>
         <Box>
           <Typography
-            variant="h4"
+            variant="h3"
             component="h2"
             color={"white"}
             fontStyle="italic">
