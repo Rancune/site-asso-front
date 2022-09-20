@@ -1,5 +1,5 @@
 import { Box, Link, Stack } from "@mui/material";
-import { FacebookIcon, InstagramIcon } from "@mui/icons-material";
+import { Facebook, Instagram } from "@mui/icons-material";
 import React from "react";
 
 const Footer = () => {
@@ -21,8 +21,8 @@ const Footer = () => {
             Copyright 2022
           </Link>
         </Box>
-        <Stack>
-          <FacebookIcon />
+        <Stack direction="row" spacing={1}>
+          <Facebook />
           <Link
             href="https://www.facebook.com/lesmeilleurssoireesdemavie"
             sx={{ textDecoration: "none" }}
@@ -30,8 +30,8 @@ const Footer = () => {
             Facebook
           </Link>
         </Stack>
-        <Stack>
-          <InstagramIcon />
+        <Stack direction="row" spacing={1}>
+          <Instagram />
           <Link
             href="https://www.instagram.com/lesmeilleurssoireesdemavie/"
             sx={{ textDecoration: "none" }}
