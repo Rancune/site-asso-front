@@ -6,8 +6,8 @@ const MainPage = () => {
   return (
     <div>
       <Box height={"130px"}> Appbar</Box>
-      <Box height={"600px"}> Sidebar</Box>
-      <Box height={"500px"}> Main</Box>
+      <Box height={"600px"}> Slider</Box>
+      <Box height={"500px"}> News</Box>
       <Footer />
     </div>
   );

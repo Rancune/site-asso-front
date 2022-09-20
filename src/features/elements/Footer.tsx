@@ -1,11 +1,12 @@
 import { Box, Link, Stack } from "@mui/material";
 import { Facebook, Instagram } from "@mui/icons-material";
 import React from "react";
+import Citation from "./Citation";
 
 const Footer = () => {
   return (
     <Stack spacing={16}>
-      <Box>Les meilleurs soirées de ma vie !</Box>
+      <Citation />
       <Stack
         direction="row"
         spacing={2}
