@@ -5,7 +5,12 @@ import Logo from "../logo/Logo";
 const Navbar = () => {
   return (
     <Stack direction="row">
-      <Stack direction="row" spacing={1} padding={3} color="black" width={1}>
+      <Stack
+        direction="row"
+        spacing={1}
+        padding={3}
+        color="black"
+        width={"80%"}>
         <Logo />
         <Box display="flex"></Box>
       </Stack>
