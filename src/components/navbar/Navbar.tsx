@@ -10,6 +10,7 @@ const Navbar = () => {
         spacing={1}
         padding={3}
         color="black"
+        bgcolor="white"
         width={"80%"}>
         <Logo />
         <Box display="flex"></Box>

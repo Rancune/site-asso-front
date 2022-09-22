@@ -5,8 +5,6 @@ import ArticlesItem from "./ArticlesItem";
 const Articles = () => {
   const [articles, setArticles] = useState([]);
   const [loading, setLoading] = useState(false);
-  // const [currentPage, setCurrentPage] = useState(1);
-  // const [articlesPerPage] = useState(10);
 
   useEffect(() => {
     const fetchArticles = async () => {
@@ -19,17 +17,6 @@ const Articles = () => {
 
     fetchArticles();
   }, []);
-
-  // Get current articles
-  // const indexOfLastArticle = currentPage * articlesPerPage;
-  // const indexOfFirstArticle = indexOfLastArticle - articlesPerPage;
-  // const currentArticles = articles.slice(
-  //   indexOfFirstArticle,
-  //   indexOfLastArticle
-  // );
-
-  // Change page
-  // const paginate = (pageNumber : number) => setCurrentPage(pageNumber);
 
   return (
     <Stack>

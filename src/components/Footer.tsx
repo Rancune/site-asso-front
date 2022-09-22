@@ -5,7 +5,7 @@ import Citation from "./Citation";
 
 const Footer = () => {
   return (
-    <Stack spacing={16}>
+    <Stack spacing={16} marginTop={16}>
       <Citation />
       <Stack
         direction="row"

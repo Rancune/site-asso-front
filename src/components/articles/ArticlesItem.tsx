@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Box, Button, Pagination, Stack } from "@mui/material";
+import { Box, Paper, Stack, Typography } from "@mui/material";
 
 interface Props {
   articles: any;
@@ -15,8 +15,8 @@ const ArticlesItem = (props: Props) => {
   }
 
   return (
-    <Stack direction="column">
-      {articles.map(
+    <Stack direction="column" width={"60%"} margin="auto" spacing={4}>
+      {articles.slice(0,5).map(
         (article: {
           id: React.Key | null | undefined;
           title:
@@ -38,23 +38,24 @@ const ArticlesItem = (props: Props) => {
             | null
             | undefined;
         }) => (
-          <Box
-            key={article.id}
-            sx={{
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-              alignItems: "center",
-              width: "100%",
-              height: "100%",
-              padding: "1rem",
-              margin: "1rem",
-              border: "1px solid #ccc",
-              borderRadius: "1rem",
-            }}>
-            <h3>{article.title}</h3>
-            <p>{article.body}</p>
-          </Box>
+          <Paper>
+            <Stack direction="row" spacing={1}>
+              <Stack spacing={1}>
+                <Typography variant="h6">{article.title}</Typography>
+                <Typography variant="body1">{article.body}</Typography>
+                <Typography variant="subtitle2">{article.id}</Typography>
+              </Stack>
+              <Box flexGrow={1} />
+              <img
+                style={{
+                  objectFit: "scale-down",
+                  width: "150px",
+                }}
+                src="https://picsum.photos/200/300"
+                alt="random"
+              />
+            </Stack>
+          </Paper>
         )
       )}
     </Stack>
