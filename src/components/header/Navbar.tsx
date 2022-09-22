@@ -1,6 +1,6 @@
 import { Stack, Button, Box } from "@mui/material";
 import React from "react";
-import Logo from "../logo/Logo";
+import Logo from "./Logo";
 
 const Navbar = () => {
   return (
