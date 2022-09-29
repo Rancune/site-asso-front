@@ -19,8 +19,17 @@ const Navbar = () => {
         <Button LinkComponent={Button} href="/news" color="inherit">
           News
         </Button>
+        <Button LinkComponent={Button} href="/articles" color="inherit">
+          Articles
+        </Button>
+        <Button LinkComponent={Button} href="/festival" color="inherit">
+          Festival
+        </Button>
         <Button LinkComponent={Button} href="/agenda" color="inherit">
           Agenda
+        </Button>
+        <Button LinkComponent={Button} href="/activites" color="inherit">
+          Activitées
         </Button>
         <Button LinkComponent={Button} href="/services" color="inherit">
           Services

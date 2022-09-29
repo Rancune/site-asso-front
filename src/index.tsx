@@ -8,21 +8,37 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Agenda from "./pages/Agenda";
 import Services from "./pages/Services";
 import Contact from "./pages/Contact";
+import Admin from "./pages/Admin";
+import Articles from "./pages/Articles";
+import Activities from "./pages/Activities";
+import { createTheme, CssBaseline, ThemeProvider } from "@mui/material";
+
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
+
+const theme = createTheme({
+
+});
+
 root.render(
   <React.StrictMode>
+    <CssBaseline />
+    <ThemeProvider theme={theme}>
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/news" element={<News />} />
+        <Route path="/articles" element={<Articles />} />
         <Route path="/agenda" element={<Agenda />} />
         <Route path="/services" element={<Services />} />
+        <Route path="/activites" element={<Activities />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/admin" element={<Admin />} />
       </Routes>
     </BrowserRouter>
+    </ThemeProvider>
   </React.StrictMode>
 );
 

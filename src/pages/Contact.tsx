@@ -8,7 +8,7 @@ const Contact = () => {
   return (
     <>
       <Navbar />
-      <Typography variant="h1" align="center">
+      <Typography variant="h1" align="center" alignItems="stretch">
         Contact
       </Typography>
       <Stack
@@ -46,6 +46,7 @@ const Contact = () => {
           />
         </Box>
       </Stack>
+      
       <Footer />
     </>
   );
