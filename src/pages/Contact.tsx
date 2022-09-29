@@ -1,13 +1,10 @@
 import { Box, Stack, Typography } from "@mui/material";
 import React from "react";
-import Footer from "../components/footer/Footer";
-import Navbar from "../components/header/Navbar";
 import Image from "../images/adress.png";
 
 const Contact = () => {
   return (
-    <>
-      <Navbar />
+    <Box>
       <Typography variant="h1" align="center" alignItems="stretch">
         Contact
       </Typography>
@@ -46,9 +43,7 @@ const Contact = () => {
           />
         </Box>
       </Stack>
-      
-      <Footer />
-    </>
+    </Box>
   );
 };
 

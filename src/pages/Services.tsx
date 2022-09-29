@@ -6,8 +6,7 @@ import Image from "../images/adress.png";
 
 const Service = () => {
   return (
-    <>
-      <Navbar />
+    <Box>
       <Typography variant="h1" align="center">
         Services
       </Typography>
@@ -18,7 +17,7 @@ const Service = () => {
         padding={6}
         height={"auto"}
         spacing={10}>
-        <Stack direction="row">
+        <Stack direction="row" spacing={1}>
           <Box>
             <Typography variant="h2">Escape Game</Typography>
             <Typography variant="body1">
@@ -106,9 +105,7 @@ const Service = () => {
           </Box>
         </Stack>
       </Stack>
-
-      <Footer />
-    </>
+    </Box>
   );
 };
 

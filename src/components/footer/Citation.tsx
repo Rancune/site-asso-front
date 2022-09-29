@@ -8,12 +8,12 @@ const Citation = () => {
       <Stack
         direction="column"
         width="80%"
-        height={100}
         bgcolor="#EFC049"
         justifyContent="flex-end"
         alignItems="flex-end"
         spacing={1}
-        padding={3}>
+        padding={3}
+        paddingTop={5}>
         <Box>
           <Typography variant="h3" color={"white"} fontStyle="italic">
             "Les meilleurs soirées de ma vie !"

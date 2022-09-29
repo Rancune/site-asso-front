@@ -1,15 +1,13 @@
 import { Box, Stack, Typography } from "@mui/material";
 import React from "react";
-import Footer from "../components/footer/Footer";
-import Navbar from "../components/header/Navbar";
+
 import Image from "../images/adress.png";
 
 const Activities = () => {
   return (
     <>
-      <Navbar />
       <Typography variant="h1" align="center">
-        Services
+        Services  
       </Typography>
       <Stack
         margin="auto"
@@ -106,8 +104,6 @@ const Activities = () => {
           </Box>
         </Stack>
       </Stack>
-
-      <Footer />
     </>
   );
 };

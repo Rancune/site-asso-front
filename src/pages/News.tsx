@@ -1,15 +1,15 @@
 import React from "react";
+import { Box, Typography } from "@mui/material";
 import Articles from "../components/articles/Articles";
-import Footer from "../components/footer/Footer";
-import Navbar from "../components/header/Navbar";
 
 const News = () => {
   return (
-    <>
-      <Navbar />
+    <Box>
+      <Typography variant="h1" align="center" pb={10}>
+        News
+      </Typography>
       <Articles />
-      <Footer />
-    </>
+    </Box>
   );
 };
 

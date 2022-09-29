@@ -1,45 +1,61 @@
-import { Stack, Button, Box } from "@mui/material";
+import { Stack, Box, Tabs, Tab, Link } from "@mui/material";
 import React from "react";
+import { useNavigate } from "react-router-dom";
+
 import Logo from "./Logo";
 
-const Navbar = () => {
+interface LinkTabProps {
+  label: string;
+  href: string;
+}
+
+const LinkTab = (props: LinkTabProps) => {
+  const navigate = useNavigate();
   return (
-    <Stack direction="row">
-      <Stack
-        direction="row"
-        spacing={1}
-        padding={3}
-        color="black"
-        bgcolor="white"
-        width={"80%"}>
-        <Logo />
-        <Box display="flex"></Box>
-      </Stack>
-      <Stack justifyContent="flex-end" alignItems="center" direction="row">
-        <Button LinkComponent={Button} href="/news" color="inherit">
-          News
-        </Button>
-        <Button LinkComponent={Button} href="/articles" color="inherit">
-          Articles
-        </Button>
-        <Button LinkComponent={Button} href="/festival" color="inherit">
-          Festival
-        </Button>
-        <Button LinkComponent={Button} href="/agenda" color="inherit">
-          Agenda
-        </Button>
-        <Button LinkComponent={Button} href="/activites" color="inherit">
-          Activitées
-        </Button>
-        <Button LinkComponent={Button} href="/services" color="inherit">
-          Services
-        </Button>
-        <Button LinkComponent={Button} href="/contact" color="inherit">
-          Contact
-        </Button>
-      </Stack>
-    </Stack>
+    <Tab
+      component="a"
+      onClick={(event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+        event.preventDefault();
+        navigate(props.href);
+      }}
+      {...props}
+    />
   );
 };
 
-export default Navbar;
+export default function NavTabs() {
+  const [value, setValue] = React.useState(0);
+
+  const handleChange = (_: React.SyntheticEvent, newValue: number) => {
+    setValue(newValue);
+  };
+  return (
+    // <Box position="relative" minHeight="160px">
+    // {/* <Box position="absolute" right={36} pt={6}> */}
+    <>
+      <Box position="relative">
+        <Box position="absolute" top={0} left={0} pt={2} pl={2}>
+          <Logo />
+        </Box>
+      </Box>
+      <Stack direction="row" justifyContent="flex-end" alignItems="center">
+        <Box display="flex" />
+        <Tabs
+          value={value}
+          onChange={handleChange}
+          aria-label="nav tabs example"
+          textColor="secondary"
+          indicatorColor="secondary">
+          <LinkTab label="News" href="/news" />
+          <LinkTab label="Articles" href="/articles" />
+          <LinkTab label="Activitées" href="/activites" />
+          <LinkTab label="Agenda" href="/agenda" />
+          <LinkTab label="Services" href="/services" />
+          <LinkTab label="Contact" href="/contact" />
+        </Tabs>
+      </Stack>
+    </>
+
+    // </Box>
+  );
+}

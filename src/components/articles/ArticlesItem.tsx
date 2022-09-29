@@ -12,13 +12,13 @@ const ArticlesItem = (props: Props) => {
   const { articles, loading } = props;
 
   if (loading) {
-    return <h2>Loading...</h2>;
+    return <h2>Chargement...</h2>;
   }
 
   return (
     <Stack direction="column" width={"60%"} margin="auto" spacing={4}>
       {articles.slice(0, 5).map((article) => (
-        <Paper>
+        <Paper key={`article-${article.id}`}>
           <Stack direction="row" spacing={1}>
             <Stack spacing={1}>
               <Typography variant="h6">{article.title}</Typography>
