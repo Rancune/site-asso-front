@@ -30,8 +30,6 @@ export default function NavTabs() {
     setValue(newValue);
   };
   return (
-    // <Box position="relative" minHeight="160px">
-    // {/* <Box position="absolute" right={36} pt={6}> */}
     <>
       <Box position="relative">
         <Box position="absolute" top={0} left={0} pt={2} pl={2}>
@@ -46,10 +44,7 @@ export default function NavTabs() {
           aria-label="nav tabs example"
           textColor="secondary"
           indicatorColor="secondary">
-          <LinkTab label="News" href="/news" />
-          <LinkTab label="Articles" href="/articles" />
-          <LinkTab label="Activitées" href="/activites" />
-          <LinkTab label="Agenda" href="/agenda" />
+          <LinkTab label="Activités" href="/activites" />
           <LinkTab label="Services" href="/services" />
           <LinkTab label="Contact" href="/contact" />
         </Tabs>

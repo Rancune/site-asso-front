@@ -13,18 +13,18 @@ const Contact = () => {
         margin="auto"
         width={"80%"}
         display="flex"
-        padding={6}
+        padding={12}
         height={"auto"}>
-        <Stack spacing={6}>
-          <Typography variant="h4" align="left" justifyContent={"center"}>
+        <Stack spacing={6} padding={4}>
+          <Typography variant="h4" align="justify">
             1) Accès piéton 21 avenue de Pierroton (chemin de terre entre le 12
             et le 14)
           </Typography>
-          <Typography variant="h4" align="left">
+          <Typography variant="h4" align="justify">
             2) Pour ceux qui viennent en voiture il est préférable de se garer
             côté voie ferrée, accès par le stade Chambrelant.
           </Typography>
-          <Typography variant="h4" align="left">
+          <Typography variant="h4" align="justify">
             3) Depuis la A63 Sortie 24 direction Pierroton; au rond-point tout
             droit jusqu'au pont de chemin de fer; immédiatement après le pont,
             tourner à gauche; passer devant le stade Chambrelant, aller jusqu'à
