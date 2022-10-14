@@ -1,8 +1,8 @@
 import { Box, Stack, Typography } from "@mui/material";
 import React from "react";
+import Image from "../components/design/Image";
 
 //Importing the images
-import Image from "../images/adress.png";
 import Animation from "../images/services/animation.jpg";
 import Escape from "../images/services/escape.jpg";
 import Piste from "../images/services/piste.jpg";
@@ -19,12 +19,17 @@ const Service = () => {
         margin="auto"
         width={"80%"}
         display="flex"
-        padding={6}
         height={"auto"}
-        spacing={20}>
-        <Stack direction="row" spacing={1}>
-          <Box padding={10}>
-            <Typography variant="h2">Animation Jeu</Typography>
+        spacing={20}
+        justifyContent="space-around"
+        alignItems="center">
+        <Stack
+          sx={{
+            display: "flex",
+            flexDirection: { xs: "column", sm: "row" },
+          }}>
+          <Box sx={{ padding: { xs: 2, sm: 10 } }}>
+            <Typography variant="h2">Animation Jeux</Typography>
             <Typography variant="body1" align="justify" paddingTop={3}>
               Animation Jeux de Société : L’association possède plus de 450
               jeux, une partie de ceux-ci sont dédiés à l’animation. Nous nous
@@ -44,30 +49,33 @@ const Service = () => {
             </Typography>
           </Box>
           <Box>
-            <img
-              src={Animation}
-              width="450px"
-              height="450px"
-              alt="animation"
-              style={{
-                objectFit: "cover",
-              }}
-            />
+            <Image src="services/animation.jpg" />
           </Box>
         </Stack>
-        <Stack direction="row">
+        <Stack
+          sx={{
+            display: "flex",
+            flexDirection: { xs: "column", sm: "row" },
+          }}>
           <Box>
-            <img
+            <Box
+              margin={"auto"}
+              display="flex"
+              component="img"
               src={Escape}
-              width="450px"
-              height="450px"
-              alt="Escape Game"
+              sx={{
+                height: 450,
+                width: 450,
+                maxHeight: { xs: 200, md: 450 },
+                maxWidth: { xs: 200, md: 450 },
+              }}
+              alt="Escape game"
               style={{
                 objectFit: "cover",
               }}
             />
           </Box>
-          <Box padding={10}>
+          <Box sx={{ padding: { xs: 2, sm: 10 } }}>
             <Typography variant="h2">Escape Game </Typography>
             <Typography variant="body1" align="justify" paddingTop={3}>
               L’appartement de l’explorateur : Avec cet Escape Game, nous vous
@@ -82,8 +90,12 @@ const Service = () => {
             </Typography>
           </Box>
         </Stack>
-        <Stack direction="row">
-          <Box padding={10}>
+        <Stack
+          sx={{
+            display: "flex",
+            flexDirection: { xs: "column", sm: "row" },
+          }}>
+          <Box sx={{ padding: { xs: 2, sm: 10 } }}>
             <Typography variant="h2">Jeu de piste</Typography>
             <Typography variant="body1" align="justify" paddingTop={3}>
               Jeu de piste personnalisé : Que ce soit pour mettre en avant les
@@ -94,30 +106,48 @@ const Service = () => {
             </Typography>
           </Box>
           <Box>
-            <img
+            <Box
+              margin={"auto"}
+              display="flex"
+              component="img"
               src={Piste}
-              width="450px"
-              height="450px"
-              alt="Jeu de pistes"
+              sx={{
+                height: 450,
+                width: 450,
+                maxHeight: { xs: 200, md: 450 },
+                maxWidth: { xs: 200, md: 450 },
+              }}
+              alt="Jeu de piste"
               style={{
                 objectFit: "cover",
               }}
             />
           </Box>
         </Stack>
-        <Stack direction="row">
+        <Stack
+          sx={{
+            display: "flex",
+            flexDirection: { xs: "column", sm: "row" },
+          }}>
           <Box>
-            <img
+            <Box
+              margin={"auto"}
+              display="flex"
+              component="img"
               src={Pret}
-              width="450px"
-              height="450px"
-              alt="prêt de jeux"
+              sx={{
+                height: 450,
+                width: 450,
+                maxHeight: { xs: 200, md: 450 },
+                maxWidth: { xs: 200, md: 450 },
+              }}
+              alt="Prêt de jeu"
               style={{
                 objectFit: "cover",
               }}
             />
           </Box>
-          <Box padding={10}>
+          <Box sx={{ padding: { xs: 2, sm: 10 } }}>
             <Typography variant="h2">Prêt de jeu</Typography>
             <Typography variant="body1" align="justify" paddingTop={3}>
               Tous les adhérents à l’association peuvent emprunter gratuitement
@@ -130,8 +160,12 @@ const Service = () => {
             </Typography>
           </Box>
         </Stack>
-        <Stack direction="row">
-          <Box padding={10}>
+        <Stack
+          sx={{
+            display: "flex",
+            flexDirection: { xs: "column", sm: "row" },
+          }}>
+          <Box sx={{ padding: { xs: 2, sm: 10 } }}>
             <Typography variant="h2">Sport Insolite</Typography>
             <Typography variant="body1" align="justify" paddingTop={3}>
               Troll Ball : Ce sport, issu du jeu de rôle grandeur Nature, a pour
@@ -149,10 +183,17 @@ const Service = () => {
             </Typography>
           </Box>
           <Box>
-            <img
+            <Box
+              margin={"auto"}
+              display="flex"
+              component="img"
               src={Sport}
-              width="450px"
-              height="450px"
+              sx={{
+                height: 450,
+                width: 450,
+                maxHeight: { xs: 200, md: 450 },
+                maxWidth: { xs: 200, md: 450 },
+              }}
               alt="Sport Insolite"
               style={{
                 objectFit: "cover",

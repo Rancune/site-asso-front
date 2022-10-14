@@ -19,11 +19,16 @@ const Activities = () => {
         margin="auto"
         width={"80%"}
         display="flex"
-        padding={6}
         height={"auto"}
-        spacing={10}>
-        <Stack direction="row">
-          <Box padding={10}>
+        spacing={20}
+        justifyContent="space-around"
+        alignItems="center">
+        <Stack
+          sx={{
+            display: "flex",
+            flexDirection: { xs: "column", sm: "row" },
+          }}>
+          <Box sx={{ padding: { xs: 2, sm: 10 } }}>
             <Typography variant="h2">Jeux de Société</Typography>
             <Typography variant="body1" align="justify" paddingTop={3}>
               L’activité jeux de société est l’occasion de jouer à des jeux de
@@ -39,30 +44,48 @@ const Activities = () => {
             </Typography>
           </Box>
           <Box>
-            <img
+            <Box
+              margin={"auto"}
+              display="flex"
+              component="img"
               src={JeuSoc}
-              width="450px"
-              height="450px"
-              alt="Jeux de Société"
+              sx={{
+                height: 450,
+                width: 450,
+                maxHeight: { xs: 200, md: 450 },
+                maxWidth: { xs: 200, md: 450 },
+              }}
+              alt="Jeu de société"
               style={{
                 objectFit: "cover",
               }}
             />
           </Box>
         </Stack>
-        <Stack direction="row">
+        <Stack
+          sx={{
+            display: "flex",
+            flexDirection: { xs: "column", sm: "row" },
+          }}>
           <Box>
-            <img
+            <Box
+              margin={"auto"}
+              display="flex"
+              component="img"
               src={Magic}
-              width="450px"
-              height="450px"
-              alt="Magic the Gathering"
+              sx={{
+                height: 450,
+                width: 450,
+                maxHeight: { xs: 200, md: 450 },
+                maxWidth: { xs: 200, md: 450 },
+              }}
+              alt="Magic l'Assemblée"
               style={{
                 objectFit: "cover",
               }}
             />
           </Box>
-          <Box padding={10}>
+          <Box sx={{ padding: { xs: 2, sm: 10 } }}>
             <Typography variant="h2">Magic l'Assemblée</Typography>
             <Typography variant="body1" align="justify" paddingTop={3}>
               L’association accueille une petite communauté de joueurs de Magic
@@ -84,8 +107,12 @@ const Activities = () => {
             </Typography>
           </Box>
         </Stack>
-        <Stack direction="row">
-          <Box padding={10}>
+        <Stack
+          sx={{
+            display: "flex",
+            flexDirection: { xs: "column", sm: "row" },
+          }}>
+          <Box sx={{ padding: { xs: 2, sm: 10 } }}>
             <Typography variant="h2">Jeu de Role </Typography>
             <Typography variant="body1" align="justify" paddingTop={3}>
               Le but du jeu de rôle est de vivre une aventure contée par un
@@ -108,30 +135,48 @@ const Activities = () => {
             </Typography>
           </Box>
           <Box>
-            <img
+            <Box
+              margin={"auto"}
+              display="flex"
+              component="img"
               src={JeuDeRole}
-              width="450px"
-              height="450px"
-              alt="Jeux de Rôle"
+              sx={{
+                height: 450,
+                width: 450,
+                maxHeight: { xs: 200, md: 450 },
+                maxWidth: { xs: 200, md: 450 },
+              }}
+              alt="Jeu de role"
               style={{
                 objectFit: "cover",
               }}
             />
           </Box>
         </Stack>
-        <Stack direction="row">
+        <Stack
+          sx={{
+            display: "flex",
+            flexDirection: { xs: "column", sm: "row" },
+          }}>
           <Box>
-            <img
+            <Box
+              margin={"auto"}
+              display="flex"
+              component="img"
               src={Figurines}
-              width="450px"
-              height="450px"
-              alt="Jeux de Société avec Figurines"
+              sx={{
+                height: 450,
+                width: 450,
+                maxHeight: { xs: 200, md: 450 },
+                maxWidth: { xs: 200, md: 450 },
+              }}
+              alt="Jeux de société avec Figurines"
               style={{
                 objectFit: "cover",
               }}
             />
           </Box>
-          <Box padding={10}>
+          <Box sx={{ padding: { xs: 2, sm: 10 } }}>
             <Typography variant="h2">Jeux de société avec Figurines</Typography>
             <Typography variant="body1" align="justify" paddingTop={3}>
               Nous organisons régulièrement des après-midis et soirées autour
@@ -148,8 +193,12 @@ const Activities = () => {
             </Typography>
           </Box>
         </Stack>
-        <Stack direction="row">
-          <Box padding={10}>
+        <Stack
+          sx={{
+            display: "flex",
+            flexDirection: { xs: "column", sm: "row" },
+          }}>
+          <Box sx={{ padding: { xs: 2, sm: 10 } }}>
             <Typography variant="h2">Origami</Typography>
             <Typography variant="body1" align="justify" paddingTop={3}>
               Venez apprendre à ranger vos boîtes de jeux différemment ! Fini
@@ -164,10 +213,17 @@ const Activities = () => {
             </Typography>
           </Box>
           <Box>
-            <img
+            <Box
+              margin={"auto"}
+              display="flex"
+              component="img"
               src={Origami}
-              width="450px"
-              height="450px"
+              sx={{
+                height: 450,
+                width: 450,
+                maxHeight: { xs: 200, md: 450 },
+                maxWidth: { xs: 200, md: 450 },
+              }}
               alt="Origami"
               style={{
                 objectFit: "cover",
@@ -175,19 +231,30 @@ const Activities = () => {
             />
           </Box>
         </Stack>
-        <Stack direction="row">
+        <Stack
+          sx={{
+            display: "flex",
+            flexDirection: { xs: "column", sm: "row" },
+          }}>
           <Box>
-            <img
+            <Box
+              margin={"auto"}
+              display="flex"
+              component="img"
               src={Peinture}
-              width="450px"
-              height="450px"
-              alt="Peinture sur figurines"
+              sx={{
+                height: 450,
+                width: 450,
+                maxHeight: { xs: 200, md: 450 },
+                maxWidth: { xs: 200, md: 450 },
+              }}
+              alt="Peinture Sur Figurines"
               style={{
                 objectFit: "cover",
               }}
             />
           </Box>
-          <Box padding={10}>
+          <Box sx={{ padding: { xs: 2, sm: 10 } }}>
             <Typography variant="h2">Peinture Sur Figurines</Typography>
             <Typography variant="body1" align="justify" paddingTop={3}>
               Il existe plein de jeux avec des figurines. L’association dispose

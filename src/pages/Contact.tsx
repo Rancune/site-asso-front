@@ -9,12 +9,13 @@ const Contact = () => {
         Contact
       </Typography>
       <Stack
-        direction={"row"}
         margin="auto"
         width={"80%"}
         display="flex"
-        padding={12}
-        height={"auto"}>
+        height={"auto"}
+        spacing={20}
+        justifyContent="space-around"
+        alignItems="center">
         <Stack spacing={6} padding={4}>
           <Typography variant="h4" align="justify">
             1) Accès piéton 21 avenue de Pierroton (chemin de terre entre le 12

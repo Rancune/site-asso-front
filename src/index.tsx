@@ -44,7 +44,16 @@ const Layout = () => {
   );
 };
 
-const theme = createTheme({});
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: "#0052cc",
+    },
+    secondary: {
+      main: "#264F36",
+    },
+  },
+});
 
 root.render(
   <React.StrictMode>

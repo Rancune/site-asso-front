@@ -2,18 +2,26 @@ import React from "react";
 import Caroussel from "../components/header/Caroussel";
 import { Box, Stack, Typography } from "@mui/material";
 
+
 const MainPage = () => {
   return (
     <Stack>
       <Caroussel />
       <Stack
+        paddingTop={5}
+        spacing={10}
         margin="auto"
         width={"80%"}
         display="flex"
         height={"auto"}
-        spacing={10}>
+        justifyContent="space-around"
+        alignItems="center">
+        <Typography variant="h2" align="center">
+          Tous les vendredis soir à partir de 20h30 à la maison de quartier
+          Pierroton{" "}
+        </Typography>
         <Box>
-          <Typography variant="h2" align="center">
+          <Typography variant="h3" align="center">
             Animation Loisir Pierroton
           </Typography>
         </Box>
@@ -24,7 +32,6 @@ const MainPage = () => {
             qui a commencé son activité début septembre 2008. La section a pour
             but de développer et de promouvoir le jeu de l’adulte. Pour cela,
             elle est ouverte aux personnes ayant entre 12 ans et 112 ans.
-            
             L’association se réunit le jeudi et dimanche après-midi ainsi que le
             vendredi soir suivant un planning d’activité prévu à l’avance et que
             vous pouvez retrouver sur notre agenda. L’adhésion est de 10€ à

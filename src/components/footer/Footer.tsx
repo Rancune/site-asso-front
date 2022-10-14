@@ -25,19 +25,10 @@ const Footer = () => {
         <Stack direction="row" spacing={1}>
           <Facebook />
           <Link
-            href="https://www.facebook.com/lesmeilleurssoireesdemavie"
+            href="https://fr-fr.facebook.com/animationloisirpierrotonsectionjeuadosadultes/"
             sx={{ textDecoration: "none" }}
             color="inherit">
             Facebook
-          </Link>
-        </Stack>
-        <Stack direction="row" spacing={1}>
-          <Instagram />
-          <Link
-            href="https://www.instagram.com/lesmeilleurssoireesdemavie/"
-            sx={{ textDecoration: "none" }}
-            color="inherit">
-            Instagram
           </Link>
         </Stack>
       </Stack>
