@@ -8,8 +8,7 @@ import { BrowserRouter, Route, Routes, Outlet } from "react-router-dom";
 import Agenda from "./pages/Agenda";
 import Services from "./pages/Services";
 import Contact from "./pages/Contact";
-import Admin from "./pages/Admin";
-import Articles from "./pages/Articles";
+import Admin from "./pages/admin/Admin";
 import Activities from "./pages/Activities";
 import {
   createTheme,
@@ -64,7 +63,6 @@ root.render(
           <Route path="/" element={<Layout />}>
             <Route path="/" element={<MainPage />} />
             <Route path="/news" element={<News />} />
-            <Route path="/articles" element={<Articles />} />
             <Route path="/agenda" element={<Agenda />} />
             <Route path="/services" element={<Services />} />
             <Route path="/activites" element={<Activities />} />

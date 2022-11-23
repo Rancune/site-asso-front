@@ -58,8 +58,10 @@ export default function NavTabs() {
           aria-label="nav tabs example"
           textColor="secondary"
           indicatorColor="secondary">
-          <LinkTab label="Accueil" href="/" />
           <LinkTab label="Activités" href="/activites" />
+          <LinkTab label="Festival" href="/" />
+          <LinkTab label="Actualités" href="/news" />
+          <LinkTab label="Agenda" href="/agenda" />
           <LinkTab label="Services" href="/services" />
           <LinkTab label="Contact" href="/contact" />
         </Tabs>
@@ -71,7 +73,7 @@ export default function NavTabs() {
         alignItems="center"
         sx={{ display: { xs: "flex", sm: "none" } }}>
         <Logo />
-        <Typography variant="h6" sx={{ mr: 2 }} alignContent="center">
+        <Typography variant="h6"  alignContent="center">
           <Box fontWeight="fontWeightBold">ALPSJAA</Box>
         </Typography>
 
@@ -106,8 +108,10 @@ export default function NavTabs() {
               textColor="secondary"
               indicatorColor="secondary"
               onClick={() => setOpen(false)}>
-              <LinkTab label="Accueil" href="/" />
               <LinkTab label="Activités" href="/activites" />
+              <LinkTab label="Festival" href="/festival" />
+              <LinkTab label="Actualités" href="/news" />
+              <LinkTab label="Agenda" href="/agenda" />
               <LinkTab label="Services" href="/services" />
               <LinkTab label="Contact" href="/contact" />
             </Tabs>

@@ -113,7 +113,7 @@ const Activities = () => {
             flexDirection: { xs: "column", sm: "row" },
           }}>
           <Box sx={{ padding: { xs: 2, sm: 10 } }}>
-            <Typography variant="h2">Jeu de Role </Typography>
+            <Typography variant="h2">Jeu de Rôle </Typography>
             <Typography variant="body1" align="justify" paddingTop={3}>
               Le but du jeu de rôle est de vivre une aventure contée par un
               Maître de Jeu. L’association a la chance de compter plusieurs

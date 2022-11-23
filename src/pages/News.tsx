@@ -6,8 +6,9 @@ const News = () => {
   return (
     <Box>
       <Typography variant="h1" align="center" pb={10}>
-        News
+        Actualités
       </Typography>
+      <Box></Box>
       <Articles />
     </Box>
   );

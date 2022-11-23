@@ -1,28 +1,49 @@
 import React, { useEffect, useState } from "react";
-import { Box, Button, Pagination, Stack } from "@mui/material";
+import { Box, Pagination, Stack } from "@mui/material";
 import ArticlesItem from "./ArticlesItem";
+import { useFetchData } from "../../hooks/UseFetchData";
+import { Article } from "../../models/articleModel";
 
 const Articles = () => {
-  const [articles, setArticles] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const { isloading, data, error } = useFetchData<Article>();
+  const [page, setPage] = useState(1);
+
+  const handleChange = (event: React.ChangeEvent<unknown>, value: number) => {
+    setPage(value);
+  };
 
   useEffect(() => {
-    const fetchArticles = async () => {
-      setLoading(true);
-      const res = await fetch("https://jsonplaceholder.typicode.com/posts");
-      const data = await res.json();
-      setArticles(data);
-      setLoading(false);
-    };
+    console.log(page);
+  }, [page]);
 
-    fetchArticles();
-  }, []);
+  console.log(data);
 
   return (
-    <Stack>
-      <ArticlesItem articles={articles} loading={loading} />
+    <Stack
+     paddingTop={5}
+        spacing={10}
+        margin="auto"
+        width={"80%"}
+        display="flex"
+        height={"auto"}
+        justifyContent="space-around"
+        alignItems="center">
+      <ArticlesItem articles={data} isloading={isloading} />
+      <Box
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
+        paddingTop={5}>
+        <Pagination
+          count={10}
+          page={page}
+          onChange={handleChange}
+          color="primary"
+        />
+      </Box>
     </Stack>
   );
 };
+
 
 export default Articles;

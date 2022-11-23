@@ -16,7 +16,7 @@ const Citation = () => {
         paddingTop={5}>
         <Box>
           <Typography variant="h3" color={"white"} fontStyle="italic">
-            "Les meilleurs soirées de ma vie !"
+            "Les meilleures soirées de ma vie !"
           </Typography>
         </Box>
         <Box>
