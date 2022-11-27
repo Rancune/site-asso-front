@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
-import { LaravelResponse } from "../models/articleModel";
+import { LaravelResponse, Article } from "../models/articleModel";
 
+// This is a custom hook that will be used to fetch data from the API
+//GET ALL ARTICLES
 export const useFetchData = <T = unknown>() => {
   const [isloading, setLoading] = useState(true);
   const [data, setData] = useState<T[]>([]);
@@ -22,14 +24,14 @@ export const useFetchData = <T = unknown>() => {
       }
     };
 
-    console.log("FETCH REQUEST");
+    console.log("FETCH REQUEST ALL ARTICLES");
     (async () => await fetchData())();
   }, []);
 
   return { isloading, data, error };
 };
 
-//function to add new article
+//POST ARTICLE
 export const useAddArticle = <T = unknown>() => {
   const [isloading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -60,7 +62,7 @@ export const useAddArticle = <T = unknown>() => {
   return { isloading, message, error, addArticle };
 };
 
-//function to delete article
+//DELETE ARTICLE
 export const useDeleteArticle = <T = unknown>() => {
   const [isloading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -91,7 +93,7 @@ export const useDeleteArticle = <T = unknown>() => {
   return { isloading, error, deleteArticle };
 };
 
-//function to update article
+//UPADTE ARTICLE
 // export const useUpdateArticle = <T = unknown>() => {
 //   const [isloading, setLoading] = useState(false);
 //   const [error, setError] = useState<string | null>(null);
@@ -99,13 +101,16 @@ export const useDeleteArticle = <T = unknown>() => {
 //   const updateArticle = async (article: T) => {
 //     try {
 //       setLoading(true);
-//       const response = await fetch(`http://localhost/api/articles/${article.id}`, {
-//         method: "PUT",
-//         headers: {
-//           "Content-Type": "application/json",
-//         },
-//         body: JSON.stringify(article),
-//       });
+//       const response = await fetch(
+//         `https://api.jeuxcestas.fr/api/articles/${article.id}`,
+//         {
+//           method: "PUT",
+//           headers: {
+//             "Content-Type": "application/json",
+//           },
+//           body: JSON.stringify(article),
+//         }
+//       );
 //       const payload: LaravelResponse<T> = await response.json();
 //       console
 //     } catch (error) {
@@ -118,7 +123,33 @@ export const useDeleteArticle = <T = unknown>() => {
 //   };
 
 //   return { isloading, error, updateArticle };
-
 // };
+
+//GET ARTICLE BY ID
+export const useFetchArticle = <T = unknown>() => {
+  const [isloading, setLoading] = useState(true);
+  const [data, setData] = useState<Article>();
+  const [error, setError] = useState<string | null>(null);
+
+  const fetchArticle = async (id: number) => {
+    try {
+      setLoading(true);
+      const response = await fetch(
+        `https://api.jeuxcestas.fr/api/articles/${id}`
+      );
+      const payload: Article = await response.json();
+      console.log("voici le return de l'api" + payload);
+      setData(payload);
+    } catch (error) {
+      const _error = error as Error;
+      setError(_error.message);
+      console.log(error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return { isloading, data, error, fetchArticle };
+};
 
 export default useFetchData;

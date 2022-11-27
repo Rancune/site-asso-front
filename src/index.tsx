@@ -10,6 +10,7 @@ import Services from "./pages/Services";
 import Contact from "./pages/Contact";
 import Admin from "./pages/admin/Admin";
 import Activities from "./pages/Activities";
+import Article from "./pages/Article";
 import {
   createTheme,
   CssBaseline,
@@ -69,6 +70,7 @@ root.render(
             <Route path="/activites" element={<Activities />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/admin" element={<Admin />} />
+            <Route path="/article/:id" element={<Article />} />
           </Route>
         </Routes>
       </BrowserRouter>
