@@ -20,30 +20,29 @@ const Articles = () => {
 
   return (
     <Stack
-     paddingTop={5}
-        spacing={10}
-        margin="auto"
-        width={"80%"}
-        display="flex"
-        height={"auto"}
-        justifyContent="space-around"
-        alignItems="center">
+      paddingTop={5}
+      spacing={10}
+      margin="auto"
+      width={"80%"}
+      display="flex"
+      height={"auto"}
+      justifyContent="space-around"
+      alignItems="center">
       <ArticlesItem articles={data} isloading={isloading} />
       <Box
         display="flex"
         justifyContent="center"
         alignItems="center"
         paddingTop={5}>
-        <Pagination
+        {/* <Pagination
           count={10}
           page={page}
           onChange={handleChange}
           color="primary"
-        />
+        /> */}
       </Box>
     </Stack>
   );
 };
-
 
 export default Articles;

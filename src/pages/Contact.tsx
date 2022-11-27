@@ -1,8 +1,14 @@
 import { Box, Stack, Typography } from "@mui/material";
 import React from "react";
 import Image from "../images/adress.png";
+import Map from "../components/map/Map";
+import { Wrapper, Status } from "@googlemaps/react-wrapper";
 
 const Contact = () => {
+  const render = (status: Status) => {
+    return <h1>{status}</h1>;
+  };
+
   return (
     <Box>
       <Typography variant="h1" align="center" alignItems="stretch">
@@ -43,6 +49,12 @@ const Contact = () => {
             }}
           />
         </Box>
+
+        <Wrapper
+          apiKey={"AIzaSyClAacmbHaQmjin_CbgmBIgMz3kLk2T8as"}
+          render={render}>
+          <Map />
+        </Wrapper>
       </Stack>
     </Box>
   );

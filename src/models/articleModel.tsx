@@ -26,4 +26,5 @@ export interface Article {
   title: string;
   body: string;
   type: string;
+  img: string;
 }

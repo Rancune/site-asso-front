@@ -15,12 +15,13 @@ import { useState } from "react";
 
 import { useAddArticle } from "../../hooks/UseFetchData";
 import { Article } from "../../models/articleModel";
+import TextEditor from "../../components/articles/TextEditor";
 
 const Admin = () => {
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
   const [type, setType] = useState("news");
-  const [imageurl, setImageurl] = useState("");
+  const [img, setImg] = useState("");
   const { isloading, message, error, addArticle } = useAddArticle();
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -30,6 +31,7 @@ const Admin = () => {
       title,
       body,
       type,
+      img,
     };
     addArticle(article);
     console.log(article);
@@ -48,8 +50,8 @@ const Admin = () => {
       case "type":
         setType(value);
         break;
-      case "imageurl":
-        setImageurl(value);
+      case "img":
+        setImg(value);
         break;
       default:
         break;
@@ -121,22 +123,23 @@ const Admin = () => {
             onChange={handleChange}
           />
         </Box>
+        <Box></Box>
         <Box>
           <TextField
-            id="imageurl"
+            id="img"
             label="Image"
             variant="outlined"
             margin="normal"
-            name="imageurl"
+            name="img"
             fullWidth
             required
-            value={imageurl}
+            value={img}
             onChange={handleChange}
           />
         </Box>
         <Box></Box>
         <FormLabel id="demo-radio-buttons-group-label">Type de news</FormLabel>
-        <RadioGroup defaultValue="Actualités" name="radio-buttons-group">
+        <RadioGroup defaultValue="news" name="radio-buttons-group">
           <FormControlLabel
             value={type}
             name="news"

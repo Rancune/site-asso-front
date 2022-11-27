@@ -9,7 +9,7 @@ export const useFetchData = <T = unknown>() => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("http://localhost/api/articles"); //TODO : Mettre l'URL en paramètre
+        const response = await fetch("https://api.jeuxcestas.fr/api/articles"); //TODO : Mettre l'URL en paramètre
         const payload: LaravelResponse<T> = await response.json();
         console.log(payload.data);
         setData(payload.data);
@@ -38,7 +38,7 @@ export const useAddArticle = <T = unknown>() => {
   const addArticle = async (article: T) => {
     try {
       setLoading(true);
-      const response = await fetch("http://localhost/api/articles", {
+      const response = await fetch("https://api.jeuxcestas.fr/api/articles", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -68,12 +68,15 @@ export const useDeleteArticle = <T = unknown>() => {
   const deleteArticle = async (id: number) => {
     try {
       setLoading(true);
-      const response = await fetch(`http://localhost/api/articles/${id}`, {
-        method: "DELETE",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
+      const response = await fetch(
+        `https://api.jeuxcestas.fr/api/articles/${id}`,
+        {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
       const payload: LaravelResponse<T> = await response.json();
       console.log(payload);
     } catch (error) {

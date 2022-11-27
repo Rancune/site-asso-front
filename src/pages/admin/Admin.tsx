@@ -16,12 +16,13 @@ import Articles from "../../components/articles/Articles";
 import Loading from "../../components/loading/Loading";
 import { useAddArticle } from "../../hooks/UseFetchData";
 import { Article } from "../../models/articleModel";
+import TextEditor from "../../components/articles/TextEditor";
 
 const Admin = () => {
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
   const [type, setType] = useState("news");
-  const [imageurl, setImageurl] = useState("");
+  const [img, setImg] = useState("");
   const { isloading, message, error, addArticle } = useAddArticle();
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -31,11 +32,14 @@ const Admin = () => {
       title,
       body,
       type,
+      img,
     };
     addArticle(article);
     console.log(article);
     console.log("New Article added");
   };
+
+  const onBodyTextChange = (value: string) => setBody(value);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -49,8 +53,8 @@ const Admin = () => {
       case "type":
         setType(value);
         break;
-      case "imageurl":
-        setImageurl(value);
+      case "img":
+        setImg(value);
         break;
       default:
         break;
@@ -58,7 +62,7 @@ const Admin = () => {
   };
 
   if (isloading) {
-    return <div>Loading...</div>;
+    return <Loading />;
   }
 
   if (error) {
@@ -112,30 +116,18 @@ const Admin = () => {
               />
             </Box>
             <Box>
-              <TextField
-                id="body"
-                label="Contenu"
-                variant="outlined"
-                margin="normal"
-                name="body"
-                multiline
-                rows={10}
-                fullWidth
-                required
-                value={body}
-                onChange={handleChange}
-              />
+              <TextEditor onChange={onBodyTextChange} value={body} />
             </Box>
             <Box>
               <TextField
-                id="imageurl"
+                id="img"
                 label="Image"
                 variant="outlined"
                 margin="normal"
-                name="imageurl"
+                name="img"
                 fullWidth
                 required
-                value={imageurl}
+                value={img}
                 onChange={handleChange}
               />
             </Box>
@@ -143,17 +135,16 @@ const Admin = () => {
             <FormLabel id="demo-radio-buttons-group-label">
               Type de news
             </FormLabel>
-            <RadioGroup
-              defaultValue="news"
-              name="radio-buttons-group"
-              value={type}>
+            <RadioGroup name="radio-buttons-group" value={type}>
               <FormControlLabel
                 name="news"
+                value="news"
                 control={<Radio />}
                 label="Actualités"
               />
               <FormControlLabel
                 name="article"
+                value="article"
                 control={<Radio />}
                 label="Articles"
               />
