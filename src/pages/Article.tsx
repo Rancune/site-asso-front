@@ -1,19 +1,26 @@
 import React, { useEffect, useState } from "react";
 import { Box, Paper, Stack, Typography } from "@mui/material";
 import ReactQuill from "react-quill";
-import useFetchArticle from "../hooks/UseFetchData";
+import useFetchArticleById from "../hooks/UseFetchData";
 import { Article } from "../models/articleModel";
+import Loading from "../components/loading/Loading";
 
+
+//RECUPERATION DE L'ARTICLE PAR SON ID ET AFFICHAGE
 const ArticleByID = () => {
-  const { data, isloading, error } = useFetchArticle();
-  //  const [page, setPage] = useState(1);
+  const { data, isloading, error } = useFetchArticleById<Article>();
 
   useEffect(() => {
     console.log(data);
   }, [data]);
 
+  if (isloading) {
+    return <Loading />;
+  }
+
   return (
     <Stack
+      direction={"column"}
       paddingTop={5}
       spacing={10}
       margin="auto"
@@ -37,22 +44,20 @@ const ArticleByID = () => {
             flexDirection: "column",
           }}>
           <Typography variant="h4" align="center">
-            {/* {data.title} */}
-            TEST
+            {data[0].title}
           </Typography>
-          {/* <div dangerouslySetInnerHTML={{ __html: data.body }} /> */}
+          <div dangerouslySetInnerHTML={{ __html: data[0].body }} />
         </Paper>
-        <Box flexGrow={1} />
-        <img
-          style={{
-            objectFit: "contain",
-            width: "300px",
-            margin: "auto",
-          }}
-          // src={data.img}
-          alt="random"
-        />
       </Box>
+      <img
+        style={{
+          objectFit: "contain",
+          width: "80%",
+          margin: "40px auto",
+        }}
+        src={data[0].img}
+        alt="random"
+      />
     </Stack>
   );
 };

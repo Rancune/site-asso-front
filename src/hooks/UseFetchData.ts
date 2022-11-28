@@ -126,12 +126,41 @@ export const useDeleteArticle = <T = unknown>() => {
 // };
 
 //GET ARTICLE BY ID
-export const useFetchArticle = <T = unknown>() => {
+// export const useFetchArticle = () => {
+//   const [isloading, setLoading] = useState(true);
+//   const [data, setData] = useState<Article>();
+//   const [error, setError] = useState<string | null>(null);
+
+//   const fetchArticle = async (id: number) => {
+//     try {
+//       setLoading(true);
+//       const response = await fetch(
+//         `https://api.jeuxcestas.fr/api/articles/${id}`
+//       );
+//       const payload: Article = await response.json();
+//       console.log("voici le return de l'api" + payload);
+//       setData(payload);
+//     } catch (error) {
+//       const _error = error as Error;
+//       setError(_error.message);
+//       console.log(error);
+//     } finally {
+//       setLoading(false);
+//     }
+//   };
+
+//   return { isloading, data, error, fetchArticle };
+// };
+
+// GET ARTICLE BY ID 
+export const useFetchArticleById = <Article>() => {
   const [isloading, setLoading] = useState(true);
   const [data, setData] = useState<Article>();
   const [error, setError] = useState<string | null>(null);
 
-  const fetchArticle = async (id: number) => {
+  const fetchArticleById = async (id
+: number) => {
+
     try {
       setLoading(true);
       const response = await fetch(
@@ -149,7 +178,8 @@ export const useFetchArticle = <T = unknown>() => {
     }
   };
 
-  return { isloading, data, error, fetchArticle };
+  return { isloading, data, error, fetchArticleById };
 };
+
 
 export default useFetchData;

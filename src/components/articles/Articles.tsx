@@ -8,6 +8,7 @@ const Articles = () => {
   const { isloading, data, error } = useFetchData<Article>();
   const [page, setPage] = useState(1);
 
+  
   const handleChange = (event: React.ChangeEvent<unknown>, value: number) => {
     setPage(value);
   };
