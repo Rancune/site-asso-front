@@ -59,7 +59,7 @@ export default function NavTabs() {
           textColor="secondary"
           indicatorColor="secondary">
           <LinkTab label="Activités" href="/activites" />
-          <LinkTab label="Festival" href="/" />
+          <LinkTab label="Festival" href="/festival" />
           <LinkTab label="Actualités" href="/news" />
           <LinkTab label="Agenda" href="/agenda" />
           <LinkTab label="Services" href="/services" />
@@ -73,7 +73,7 @@ export default function NavTabs() {
         alignItems="center"
         sx={{ display: { xs: "flex", sm: "none" } }}>
         <Logo />
-        <Typography variant="h6"  alignContent="center">
+        <Typography variant="h6" alignContent="center">
           <Box fontWeight="fontWeightBold">ALPSJAA</Box>
         </Typography>
 

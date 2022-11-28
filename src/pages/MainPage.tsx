@@ -1,6 +1,6 @@
 import React from "react";
 import Caroussel from "../components/header/Caroussel";
-import { Box, Stack, Typography } from "@mui/material";
+import { Box, Divider, Stack, Typography } from "@mui/material";
 import Articles from "../components/articles/Articles";
 import { useFetchData } from "../hooks";
 
@@ -26,6 +26,8 @@ const MainPage = () => {
           Pierroton{" "}
         </Typography>
         <Box></Box>
+        <Divider variant="middle" />
+
         <Box>
           <Typography variant="h3" align="center">
             Actualités Animation Loisir Pierroton

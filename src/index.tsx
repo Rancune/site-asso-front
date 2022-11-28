@@ -22,6 +22,7 @@ import Footer from "./components/footer/Footer";
 import NavBar from "./components/header/Navbar";
 import Logo from "./components/header/Logo";
 import process from "process";
+import Festival from "./pages/Festival";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -71,6 +72,8 @@ root.render(
             <Route path="/contact" element={<Contact />} />
             <Route path="/admin" element={<Admin />} />
             <Route path="/article/:id" element={<Article />} />
+            <Route path="*" element={<MainPage />} />
+            <Route path="/festival" element={<Festival />} />
           </Route>
         </Routes>
       </BrowserRouter>

@@ -1,11 +1,11 @@
+import React from "react";
 import { Box, Typography } from "@mui/material";
 
-
-const Agenda = () => {
+const Festival = () => {
   return (
     <>
       <Typography variant="h1" align="center">
-        Agenda
+        Festival
       </Typography>
       <Box>
         <Typography variant="h4" align="center" bgcolor={"yellow"}>
@@ -16,4 +16,4 @@ const Agenda = () => {
   );
 };
 
-export default Agenda;
+export default Festival;
